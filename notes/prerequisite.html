@@ -1,0 +1,2206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0120)file:///C:/Users/kissmd/shared/xo/oktat%C3%A1si%20anyagok/szoftverfejleszt%C5%91%20oktat%C3%A1s_3144175534593688553.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>prerequisite</title>
+<style type="text/css">
+    li { list-style: none;  margin: 0; }
+    p { margin: 0; }
+    span.foldopened { color: white; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: visible;
+    cursor:pointer; }
+
+
+    span.foldclosed { color: #666666; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: hidden;
+    cursor:pointer; }
+
+    span.foldspecial { color: #666666; font-size: xx-small; border-style: none solid solid none;
+    border-color: #CCCCCC; border-width: 1; font-family: sans-serif; padding: 0em 0.1em 0em 0.1em; background: #e0e0e0;
+    cursor:pointer; }
+
+    span.l { color: red; font-weight: bold; }
+
+    a.mapnode:link {text-decoration: none; color: black; }
+    a.mapnode:visited {text-decoration: none; color: black; }
+    a.mapnode:active {text-decoration: none; color: black; }
+    a.mapnode:hover {text-decoration: none; color: black; background: #eeeee0; }
+
+</style>
+<!-- ^ Position is not set to relative / absolute here because of Mozilla -->
+</head>
+<body>
+
+<script type="text/javascript">
+   // Here we implement folding. It works fine with MSIE5.5, MSIE6.0 and
+   // Mozilla 0.9.6.
+
+   if (document.layers) {
+      //Netscape 4 specific code
+      pre = 'document.';
+      post = ''; }
+   if (document.getElementById) {
+      //Netscape 6 specific code
+      pre = 'document.getElementById("';
+      post = '").style'; }
+   if (document.all) {
+      //IE4+ specific code
+      pre = 'document.all.';
+      post = '.style'; }
+
+function layer_exists(layer) {
+   try {
+      eval(pre + layer + post);
+      return true; }
+   catch (error) {
+      return false; }}
+
+function show_layer(layer) {
+   eval(pre + layer + post).position = 'relative'; 
+   eval(pre + layer + post).visibility = 'visible'; }
+
+function hide_layer(layer) {
+   eval(pre + layer + post).visibility = 'hidden';
+   eval(pre + layer + post).position = 'absolute'; }
+
+function hide_folder(folder) {
+    hide_folding_layer(folder)
+    show_layer('show'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function show_folder(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_layer('show'+folder+'_'+i); }
+}
+function show_folder_completely(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+
+
+function hide_folding_layer(folder) {
+   var i;
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folding_layer(folder+'_'+i); }
+
+   hide_layer('hide'+folder);
+   hide_layer('show'+folder);
+   hide_layer('fold'+folder);
+
+   scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function fold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folder(folder+'_'+i); }
+}
+
+function unfold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+</script>
+<span class="foldspecial" onclick="fold_document()">All +</span>
+<span class="foldspecial" onclick="unfold_document()">All -</span>
+<p>prerequisite
+</p><ul><li><span id="show1_1" class="foldclosed" onclick="show_folder(&#39;1_1&#39;)" style="position: relative; visibility: visible;">+</span> <span id="hide1_1" class="foldopened" onclick="hide_folder(&#39;1_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+0503
+<ul id="fold1_1" style="position: absolute; visibility: hidden;"><li>https://news.ycombinator.com/
+
+</li>
+<li><span id="show1_1_1" class="foldclosed" onclick="show_folder(&#39;1_1_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_1" class="foldopened" onclick="hide_folder(&#39;1_1_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+easy, complex, hard, impossible problems
+<ul id="fold1_1_1" style="position: absolute; visibility: hidden;"><li>progressing
+
+</li>
+<li>low hanging fruits
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_2" class="foldclosed" onclick="show_folder(&#39;1_1_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_2" class="foldopened" onclick="hide_folder(&#39;1_1_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+graphs
+<ul id="fold1_1_2" style="position: absolute; visibility: hidden;"><li>node, edge
+
+</li>
+<li>edge direction
+<ul><li>directed
+
+</li>
+<li>undirected
+
+</li>
+
+</ul>
+</li>
+<li>connection
+<ul><li>connected
+<ul><li>all nodes can be reached from all nodes
+
+</li>
+
+</ul>
+</li>
+<li>unconnected
+<ul><li>multiple groups
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>cycle
+<ul><li>a trail / path of connections leading to the starting node
+
+</li>
+
+</ul>
+</li>
+<li>tree
+<ul><li>a connected graph without a cycle
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_3" class="foldclosed" onclick="show_folder(&#39;1_1_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_3" class="foldopened" onclick="hide_folder(&#39;1_1_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+modellezés
+<ul id="fold1_1_3" style="position: absolute; visibility: hidden;"><li>modell
+<ul><li>a világ egy részletének egy szempontból történ&#337; leírása
+
+</li>
+<li>egy (néhány) aspektusra fókuszál
+
+</li>
+<li>torz, tökéletlen
+
+</li>
+<li>segíti a megértést
+
+</li>
+
+</ul>
+</li>
+<li>modellezés
+<ul><li>a világ egy szempontból történ&#337; leírása
+
+</li>
+<li>szabványos jelölésrendszer használatával
+
+</li>
+<li>részekre bontja a világ komplexitását
+<ul><li>részenként írja le
+
+</li>
+<li>oldja meg
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_3_1" class="foldclosed" onclick="show_folder(&#39;1_1_3_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_3_1" class="foldopened" onclick="hide_folder(&#39;1_1_3_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+simulation &nbsp;vs emulation
+<ul id="fold1_1_3_1" style="position: absolute; visibility: hidden;"><li><p>Emulators focus on recreating the behavior of a system, with no regard for how the system functions internally.
+</p><p>Simulators2focus on modeling the components of a system. You use an emulator when you care mostly about what a system does, and a simulator when you care about how it does it.
+</p><p>simulation
+</p><ul><li>"mimics"
+
+</li>
+<li>for analys or study
+
+</li>
+
+</ul><p>emulation
+</p><ul><li>"duplicates", "substitute"
+
+</li>
+<li>same behavior
+
+</li>
+<li>eg virtual PC
+
+</li>
+
+</ul></li>
+</ul>
+</li>
+<li>software mint modell
+<ul><li>a sotware a (elképzelt) világ leképezése, modelje
+
+</li>
+<li>simulation
+
+</li>
+<li>tökéletlen, torz
+<ul><li>megértési hiba (=hiányosság)
+<ul><li>m&#369;ködés megértésének hibája
+
+</li>
+<li>megértés átadási hiba
+
+</li>
+
+</ul>
+</li>
+<li>edge case-k
+
+</li>
+<li>implementációs hiba
+
+</li>
+
+</ul>
+</li>
+<li>készítés közben történik a megismerés
+
+</li>
+<li>business domain
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4" class="foldclosed" onclick="show_folder(&#39;1_1_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4" class="foldopened" onclick="hide_folder(&#39;1_1_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+programozás alapjai
+<ul id="fold1_1_4" style="position: absolute; visibility: hidden;"><li>gépi kód
+
+</li>
+<li><span id="show1_1_4_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+nyelvek
+<ul id="fold1_1_4_1" style="position: absolute; visibility: hidden;"><li>ember által (jobban) értelmezhet&#337; kód
+
+</li>
+<li>de mégis strukturált
+
+</li>
+<li>fordító fordít az ember közeli és a gépi nyelv között
+
+</li>
+<li><span id="show1_1_4_1_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_1_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_1_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_1_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+precompiler
+<ul id="fold1_1_4_1_1" style="position: absolute; visibility: hidden;"><li>el&#337;feldolgozás, pl macro-k
+
+</li>
+<li>string =&gt; string transformation
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_1_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_1_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_1_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_1_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+compiler
+<ul id="fold1_1_4_1_2" style="position: absolute; visibility: hidden;"><li>forráskód-&gt;gépi kód
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_1_3" class="foldclosed" onclick="show_folder(&#39;1_1_4_1_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_1_3" class="foldopened" onclick="hide_folder(&#39;1_1_4_1_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+linkelés
+<ul id="fold1_1_4_1_3" style="position: absolute; visibility: hidden;"><li>statikus
+
+</li>
+<li>dinamikus
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_1_4" class="foldclosed" onclick="show_folder(&#39;1_1_4_1_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_1_4" class="foldopened" onclick="hide_folder(&#39;1_1_4_1_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+interpreter
+<ul id="fold1_1_4_1_4" style="position: absolute; visibility: hidden;"><li>futásidej&#369; feldolgozás
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+változók
+<ul id="fold1_1_4_2" style="position: absolute; visibility: hidden;"><li><span id="show1_1_4_2_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_2_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_2_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_2_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+változó típusok
+<ul id="fold1_1_4_2_1" style="position: absolute; visibility: hidden;"><li><span id="show1_1_4_2_1_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_2_1_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_2_1_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_2_1_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+primitive
+<ul id="fold1_1_4_2_1_1" style="position: absolute; visibility: hidden;"><li>egész szám
+
+</li>
+<li>tizedes tört szám
+
+</li>
+<li>boolean
+
+</li>
+<li>character (bet&#369;)
+
+</li>
+<li>string
+
+</li>
+
+</ul>
+</li>
+<li>dátum (timestamp)
+
+</li>
+<li><span id="show1_1_4_2_1_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_2_1_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_2_1_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_2_1_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+összetett
+<ul id="fold1_1_4_2_1_2" style="position: absolute; visibility: hidden;"><li>tömb
+<ul><li>array
+
+</li>
+<li>number =&gt; value
+
+</li>
+
+</ul>
+</li>
+<li>map
+<ul><li>key =&gt; value
+
+</li>
+
+</ul>
+</li>
+<li>objektum
+
+</li>
+
+</ul>
+</li>
+<li>strong typing vs weak typing
+<ul><li>dynamic typing
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>értékek
+<ul><li>deklaráció, inicializáció, értékadás
+
+</li>
+<li>valódi érték
+
+</li>
+<li>undefined
+
+</li>
+<li>null
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3" class="foldclosed" onclick="show_folder(&#39;1_1_4_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3" class="foldopened" onclick="hide_folder(&#39;1_1_4_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+általános nyelvi elemek
+<ul id="fold1_1_4_3" style="position: absolute; visibility: hidden;"><li><span id="show1_1_4_3_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+változó
+<ul id="fold1_1_4_3_1" style="position: absolute; visibility: hidden;"><li><span id="show1_1_4_3_1_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_1_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_1_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_1_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+memória rekesz
+<ul id="fold1_1_4_3_1_1" style="position: absolute; visibility: hidden;"><li>memória cím azonosítja
+
+</li>
+<li>általában névvel rendelkezik
+
+</li>
+<li>név-érték pár
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3_1_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_1_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_1_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_1_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+legtöbb nyelvben tipussal rendelkezik
+<ul id="fold1_1_4_3_1_2" style="position: absolute; visibility: hidden;"><li>beépített segédmechanizmusok
+<ul><li>pl tipus ellen&#337;rzés
+
+</li>
+<li>összeadás számok esetén
+
+</li>
+<li>összef&#369;zés szövegek esetén
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>konstansok
+<ul><li>id&#337;ben nem változó kulcs - érték pár
+
+</li>
+
+</ul>
+</li>
+<li>mutable/immutable
+
+</li>
+<li>adatszerkezetek
+<ul><li>összetett változó
+
+</li>
+<li>több kisebb elemb&#337;l építkezik
+
+</li>
+<li>pl tömbök: lista, mártix, objektum
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+vezérlési szerkezetek
+<ul id="fold1_1_4_3_2" style="position: absolute; visibility: hidden;"><li>elágazások
+<ul><li>if, then, else
+
+</li>
+<li>switch
+
+</li>
+
+</ul>
+</li>
+<li>ismétl&#337;dések
+<ul><li>do while
+
+</li>
+<li>while do
+
+</li>
+<li>for ciklus
+
+</li>
+<li>for in range
+
+</li>
+<li>for each
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3_3" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_3" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+m&#369;velet
+<ul id="fold1_1_4_3_3" style="position: absolute; visibility: hidden;"><li>függvény
+<ul><li><span id="show1_1_4_3_3_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_3_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_3_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_3_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+név
+<ul id="fold1_1_4_3_3_1" style="position: absolute; visibility: hidden;"><li>elmaradhat
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3_3_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_3_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_3_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_3_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+paraméterek
+<ul id="fold1_1_4_3_3_2" style="position: absolute; visibility: hidden;"><li>változó tipus
+
+</li>
+<li>változó paraméter szám
+
+</li>
+<li>default érték
+
+</li>
+<li>hivatkozás parametér név alapján (plsql)
+
+</li>
+
+</ul>
+</li>
+<li>törzs
+<ul><li>végrehajtandó m&#369;veletek
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3_3_3" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_3_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_3_3" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_3_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+szignatúra
+<ul id="fold1_1_4_3_3_3" style="position: absolute; visibility: hidden;"><li>név + paraméterek száma, tipusa/neve
+
+</li>
+<li>overloading
+<ul><li>function alma(korte: integer)
+
+</li>
+<li>function alma(korte: string)
+
+</li>
+<li>function alma(korte: string, szilva: string) 
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>visszatérési érték
+
+</li>
+
+</ul>
+</li>
+<li>eljárás
+
+</li>
+<li>metódus
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3_4" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_4" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+pure function
+<ul id="fold1_1_4_3_4" style="position: absolute; visibility: hidden;"><li><span id="show1_1_4_3_4_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_4_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_4_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_4_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+single parameter
+<ul id="fold1_1_4_3_4_1" style="position: absolute; visibility: hidden;"><li>currying
+
+</li>
+
+</ul>
+</li>
+<li>deterministic
+<ul><li>same input - same output
+
+</li>
+
+</ul>
+</li>
+<li>no side effect
+<ul><li>no state change
+
+</li>
+<li>no internal state
+
+</li>
+
+</ul>
+</li>
+<li>=&gt; cachable
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_3_5" class="foldclosed" onclick="show_folder(&#39;1_1_4_3_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_3_5" class="foldopened" onclick="hide_folder(&#39;1_1_4_3_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+higher order functions
+<ul id="fold1_1_4_3_5" style="position: absolute; visibility: hidden;"><li>visszatérése és/vagy paramétere egy függvény
+
+</li>
+<li>add ( a:int, b:int) =&gt; c:int
+
+</li>
+<li>add(a:int) =&gt; (b:int) =&gt; c:int
+
+</li>
+<li>add(5) (4) == 9
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_4" class="foldclosed" onclick="show_folder(&#39;1_1_4_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_4" class="foldopened" onclick="hide_folder(&#39;1_1_4_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+imperatív vs deklaratív megközelítés
+<ul id="fold1_1_4_4" style="position: absolute; visibility: hidden;"><li>lépések definiálása
+
+</li>
+<li>eredmény leírása
+<ul><li>html, css
+
+</li>
+<li>sql
+
+</li>
+<li>riporting rendszerek
+
+</li>
+<li>excel (reactive)
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_5" class="foldclosed" onclick="show_folder(&#39;1_1_4_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_5" class="foldopened" onclick="hide_folder(&#39;1_1_4_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+láthatóság
+<ul id="fold1_1_4_5" style="position: absolute; visibility: hidden;"><li>definiálja, hogy a külvilág mit lát/használhat a modul-ból
+<ul><li>intention
+
+</li>
+<li>security net
+
+</li>
+
+</ul>
+</li>
+<li>public
+
+</li>
+<li>private
+
+</li>
+<li><span id="show1_1_4_5_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_5_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_5_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_5_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+protected
+<ul id="fold1_1_4_5_1" style="position: absolute; visibility: hidden;"><li>leszármazottak
+<ul><li>sub class / child class
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_5_1_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_5_1_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_5_1_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_5_1_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+package
+<ul id="fold1_1_4_5_1_1" style="position: absolute; visibility: hidden;"><li>com.google
+
+</li>
+<li>com.google.search
+<ul><li>Search
+
+</li>
+<li>SearchController
+
+</li>
+
+</ul>
+</li>
+<li>com.google.search.util
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>láthatóság változókat, metódusokat / függvény, classok-at, package érinti
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_6" class="foldclosed" onclick="show_folder(&#39;1_1_4_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_6" class="foldopened" onclick="hide_folder(&#39;1_1_4_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+objektum orientáltság
+<ul id="fold1_1_4_6" style="position: absolute; visibility: hidden;"><li><span id="show1_1_4_6_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_6_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_6_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_6_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+egységbe zárás (encapsulation)
+<ul id="fold1_1_4_6_1" style="position: absolute; visibility: hidden;"><li>összetartozó adatok és a rajtuk végrehajtott m&#369;veletek egységbe zárása
+
+</li>
+<li>osztály, mez&#337;, metódus
+
+</li>
+<li>class, field, method
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_6_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_6_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_6_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_6_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+örökl&#337;dés (inharitance)
+<ul id="fold1_1_4_6_2" style="position: absolute; visibility: hidden;"><li>szül&#337; - gyermek hierarchia
+
+</li>
+<li>a leszármazott örökli az &#337;s tulajdonságait (adatszerkezetek, metódusok)
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_6_3" class="foldclosed" onclick="show_folder(&#39;1_1_4_6_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_6_3" class="foldopened" onclick="hide_folder(&#39;1_1_4_6_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+polimorfizmus (polymorhpism)
+<ul id="fold1_1_4_6_3" style="position: absolute; visibility: hidden;"><li>azonos interface mögötti dolgok különböz&#337; dolgokat csinálnak
+
+</li>
+<li>az interface-t megvalósító különböz&#337; példányok különböz&#337; környezetben máshogyan viselkedhetnek
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_7" class="foldclosed" onclick="show_folder(&#39;1_1_4_7&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_7" class="foldopened" onclick="hide_folder(&#39;1_1_4_7&#39;)" style="visibility: hidden; position: absolute;">-</span>
+funkció orientáltság
+<ul id="fold1_1_4_7" style="position: absolute; visibility: hidden;"><li>az elvégezhet&#337; m&#369;veletekre fókuszál, a "mivel" másodlagos
+
+</li>
+<li>központi eleme a function
+
+</li>
+<li>pure functions
+
+</li>
+<li>immutable values
+
+</li>
+<li>higher order functions
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_8" class="foldclosed" onclick="show_folder(&#39;1_1_4_8&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_8" class="foldopened" onclick="hide_folder(&#39;1_1_4_8&#39;)" style="visibility: hidden; position: absolute;">-</span>
+esemény orientáltság
+<ul id="fold1_1_4_8" style="position: absolute; visibility: hidden;"><li>eseményekre adott válaszreakciókkal írja le a világot
+
+</li>
+<li>esemény
+
+</li>
+<li>esemény típusok
+
+</li>
+<li><span id="show1_1_4_8_1" class="foldclosed" onclick="show_folder(&#39;1_1_4_8_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_8_1" class="foldopened" onclick="hide_folder(&#39;1_1_4_8_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+event bus
+<ul id="fold1_1_4_8_1" style="position: absolute; visibility: hidden;"><li>queue
+
+</li>
+<li>event stream
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_8_2" class="foldclosed" onclick="show_folder(&#39;1_1_4_8_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_8_2" class="foldopened" onclick="hide_folder(&#39;1_1_4_8_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+source
+<ul id="fold1_1_4_8_2" style="position: absolute; visibility: hidden;"><li>event source
+
+</li>
+<li>event emitter
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_8_3" class="foldclosed" onclick="show_folder(&#39;1_1_4_8_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_8_3" class="foldopened" onclick="hide_folder(&#39;1_1_4_8_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+válaszreakciók
+<ul id="fold1_1_4_8_3" style="position: absolute; visibility: hidden;"><li>esemény kezel&#337;, handler, consumer, subscriber
+
+</li>
+<li>egy függvény meghatározott paraméter szignatúrával
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_8_4" class="foldclosed" onclick="show_folder(&#39;1_1_4_8_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_8_4" class="foldopened" onclick="hide_folder(&#39;1_1_4_8_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+feliratkozás/leiratkozás
+<ul id="fold1_1_4_8_4" style="position: absolute; visibility: hidden;"><li>subscribe/ unsubscribe
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_8_5" class="foldclosed" onclick="show_folder(&#39;1_1_4_8_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_8_5" class="foldopened" onclick="hide_folder(&#39;1_1_4_8_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+esemény bekövetkezése
+<ul id="fold1_1_4_8_5" style="position: absolute; visibility: hidden;"><li>emit
+
+</li>
+<li>dispatch
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_9" class="foldclosed" onclick="show_folder(&#39;1_1_4_9&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_9" class="foldopened" onclick="hide_folder(&#39;1_1_4_9&#39;)" style="visibility: hidden; position: absolute;">-</span>
+logikai m&#369;veletek / kapuk
+<ul id="fold1_1_4_9" style="position: absolute; visibility: hidden;"><li>boolean
+<ul><li>igaz / hamis
+
+</li>
+
+</ul>
+</li>
+<li>==, !=, &nbsp;&lt;, &gt;, &lt;=, &gt;=
+
+</li>
+<li>NOT
+
+</li>
+<li>és
+<ul><li>mindkett&#337; igaz
+
+</li>
+
+</ul>
+</li>
+<li>vagy
+<ul><li>legalább egy igaz
+
+</li>
+
+</ul>
+</li>
+<li>xor
+<ul><li>ha pontosan egy paramétere igaz
+
+</li>
+<li>különböz&#337;ség vizsgálat
+
+</li>
+
+</ul>
+</li>
+<li>()
+<ul><li>precedencia emelésre
+
+</li>
+
+</ul>
+</li>
+<li>De Morgan szabály
+<ul><li> (E union F)^=E^ intersection F^ 
+
+</li>
+<li> (E intersection F)^=E^ union F^'
+
+</li>
+<li>Search A: NOT (cars OR trucks)
+
+</li>
+<li>Search B: (NOT cars) AND (NOT trucks)
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_4_10" class="foldclosed" onclick="show_folder(&#39;1_1_4_10&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_4_10" class="foldopened" onclick="hide_folder(&#39;1_1_4_10&#39;)" style="visibility: hidden; position: absolute;">-</span>
+composition, combination
+<ul id="fold1_1_4_10" style="position: absolute; visibility: hidden;"><li>composition: auto
+
+</li>
+<li>combination: house
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_5" class="foldclosed" onclick="show_folder(&#39;1_1_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_5" class="foldopened" onclick="hide_folder(&#39;1_1_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+hashing
+<ul id="fold1_1_5" style="position: absolute; visibility: hidden;"><li>hash: a string representation of a long string
+
+</li>
+<li>hash function
+<ul><li>fast
+
+</li>
+<li>deterministic
+<ul><li>same input same output
+
+</li>
+
+</ul>
+</li>
+<li>any small change in the input is visible in the output
+
+</li>
+
+</ul>
+</li>
+<li>usage
+<ul><li>validation
+
+</li>
+<li>password
+
+</li>
+<li>security application
+
+</li>
+<li>large cache table / map
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_6" class="foldclosed" onclick="show_folder(&#39;1_1_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_6" class="foldopened" onclick="hide_folder(&#39;1_1_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+API contract
+<ul id="fold1_1_6" style="position: absolute; visibility: hidden;"><li>API 
+<ul><li>Application
+
+</li>
+<li>Programming
+
+</li>
+<li>Interface
+<ul><li>public methods
+<ul><li>signature
+
+</li>
+<li>behavior
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>developer
+
+</li>
+<li>user
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_7" class="foldclosed" onclick="show_folder(&#39;1_1_7&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_7" class="foldopened" onclick="hide_folder(&#39;1_1_7&#39;)" style="visibility: hidden; position: absolute;">-</span>
+semver
+<ul id="fold1_1_7" style="position: absolute; visibility: hidden;"><li>semantic versioning
+
+</li>
+<li>1.12.134
+<ul><li>major
+<ul><li>breaks the backward compatibility
+
+</li>
+
+</ul>
+</li>
+<li>minor 
+<ul><li>adds new features
+
+</li>
+
+</ul>
+</li>
+<li>patch
+<ul><li>bug fix
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>0.x
+<ul><li>unstable
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_7_1" class="foldclosed" onclick="show_folder(&#39;1_1_7_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_7_1" class="foldopened" onclick="hide_folder(&#39;1_1_7_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+LTS
+<ul id="fold1_1_7_1" style="position: absolute; visibility: hidden;"><li>periodic update
+<ul><li>6h - 24h
+
+</li>
+
+</ul>
+</li>
+<li>Long Term Support
+<ul><li>6m active
+
+</li>
+<li>12m bugfix
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_8" class="foldclosed" onclick="show_folder(&#39;1_1_8&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_8" class="foldopened" onclick="hide_folder(&#39;1_1_8&#39;)" style="visibility: hidden; position: absolute;">-</span>
+DI
+<ul id="fold1_1_8" style="position: absolute; visibility: hidden;"><li><span id="show1_1_8_1" class="foldclosed" onclick="show_folder(&#39;1_1_8_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_8_1" class="foldopened" onclick="hide_folder(&#39;1_1_8_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Dependency Injection
+<ul id="fold1_1_8_1" style="position: absolute; visibility: hidden;"><li>IoC
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_8_2" class="foldclosed" onclick="show_folder(&#39;1_1_8_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_8_2" class="foldopened" onclick="hide_folder(&#39;1_1_8_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+saját magadnak állítod el&#337; a függ&#337;ségeket
+<ul id="fold1_1_8_2" style="position: absolute; visibility: hidden;"><li>Single Responsibility / Separation of Concerns
+
+</li>
+<li>tesztelés nehézkes
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_8_3" class="foldclosed" onclick="show_folder(&#39;1_1_8_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_8_3" class="foldopened" onclick="hide_folder(&#39;1_1_8_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+DI framework
+<ul id="fold1_1_8_3" style="position: absolute; visibility: hidden;"><li>feladata
+<ul><li>dependency management
+<ul><li>ki kit&#337;l függ
+
+</li>
+
+</ul>
+</li>
+<li>dependency creation
+
+</li>
+<li>dependency injection
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>a komponensek csak deklarálják a függ&#337;ségeiket, de a DI FW adja oda nekik, construction time
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_9" class="foldclosed" onclick="show_folder(&#39;1_1_9&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_9" class="foldopened" onclick="hide_folder(&#39;1_1_9&#39;)" style="visibility: hidden; position: absolute;">-</span>
+optimalizáció
+<ul id="fold1_1_9" style="position: absolute; visibility: hidden;"><li>cél
+<ul><li>jellegét
+
+</li>
+<li>dimension
+
+</li>
+
+</ul>
+</li>
+<li>mér&#337;szám
+
+</li>
+<li>célérték
+
+</li>
+<li>bottleneck
+
+</li>
+<li>optimalizációs lépések
+
+</li>
+<li>mérés
+
+</li>
+<li>lokális extrémum pont
+
+</li>
+<li>premature optimalisation
+
+</li>
+<li>readability, maintainability
+<ul><li>maintenance cost
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_10" class="foldclosed" onclick="show_folder(&#39;1_1_10&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10" class="foldopened" onclick="hide_folder(&#39;1_1_10&#39;)" style="visibility: hidden; position: absolute;">-</span>
+tesztelés
+<ul id="fold1_1_10" style="position: absolute; visibility: hidden;"><li><span id="show1_1_10_1" class="foldclosed" onclick="show_folder(&#39;1_1_10_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_1" class="foldopened" onclick="hide_folder(&#39;1_1_10_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+cél
+<ul id="fold1_1_10_1" style="position: absolute; visibility: hidden;"><li>confidence
+
+</li>
+<li>megfelel&#337; m&#369;ködés validálása
+
+</li>
+<li>hibák korai felfedezése és javítása
+<ul><li>megértési hiba
+
+</li>
+<li>tervezési hiba
+
+</li>
+<li>implementációs hiba
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>végrehajtás szerint
+<ul><li><span id="show1_1_10_2" class="foldclosed" onclick="show_folder(&#39;1_1_10_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_2" class="foldopened" onclick="hide_folder(&#39;1_1_10_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+manuális
+<ul id="fold1_1_10_2" style="position: absolute; visibility: hidden;"><li>ember hajtja végre
+
+</li>
+<li>intuitív
+<ul><li>olyan dolgok is kiderülnek, amiket gép sosem venne észre
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_10_3" class="foldclosed" onclick="show_folder(&#39;1_1_10_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_3" class="foldopened" onclick="hide_folder(&#39;1_1_10_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+automata
+<ul id="fold1_1_10_3" style="position: absolute; visibility: hidden;"><li>programozottan gép hajtja végre
+<ul><li>pontos
+
+</li>
+<li>gyors
+
+</li>
+<li>párhuzamosítható
+
+</li>
+<li>olcsó
+
+</li>
+<li>gyakran futtatható
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_10_4" class="foldclosed" onclick="show_folder(&#39;1_1_10_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_4" class="foldopened" onclick="hide_folder(&#39;1_1_10_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+tipusok
+<ul id="fold1_1_10_4" style="position: absolute; visibility: hidden;"><li><span id="show1_1_10_4_1" class="foldclosed" onclick="show_folder(&#39;1_1_10_4_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_4_1" class="foldopened" onclick="hide_folder(&#39;1_1_10_4_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+feature based
+<ul id="fold1_1_10_4_1" style="position: absolute; visibility: hidden;"><li>fejlesztési szemszögb&#337;l
+
+</li>
+<li>whitebox
+<ul><li>ismert bels&#337; bels&#337; m&#369;ködés
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_10_4_2" class="foldclosed" onclick="show_folder(&#39;1_1_10_4_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_4_2" class="foldopened" onclick="hide_folder(&#39;1_1_10_4_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+functional
+<ul id="fold1_1_10_4_2" style="position: absolute; visibility: hidden;"><li>a felhasználó szemszögéb&#337;l
+
+</li>
+<li>blackbox
+<ul><li>csak a modul felülete ismert (API)
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_10_5" class="foldclosed" onclick="show_folder(&#39;1_1_10_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_5" class="foldopened" onclick="hide_folder(&#39;1_1_10_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+mérete szerint
+<ul id="fold1_1_10_5" style="position: absolute; visibility: hidden;"><li>unit
+<ul><li>1 unit
+
+</li>
+<li>isolation
+
+</li>
+<li>dependencies are mocked
+
+</li>
+
+</ul>
+</li>
+<li>integration, system
+
+</li>
+<li>end to end
+
+</li>
+
+</ul>
+</li>
+<li>code coverage
+
+</li>
+<li>feature coverage
+
+</li>
+<li><span id="show1_1_10_6" class="foldclosed" onclick="show_folder(&#39;1_1_10_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_6" class="foldopened" onclick="hide_folder(&#39;1_1_10_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+TDD
+<ul id="fold1_1_10_6" style="position: absolute; visibility: hidden;"><li>Test Driven Development
+
+</li>
+<li>flow
+<ul><li>green
+
+</li>
+<li>new test
+<ul><li>red
+
+</li>
+
+</ul>
+</li>
+<li>write code
+<ul><li>green
+
+</li>
+
+</ul>
+</li>
+<li>refactor
+<ul><li>modify code
+
+</li>
+<li>green
+
+</li>
+
+</ul>
+</li>
+<li>repeat
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_10_7" class="foldclosed" onclick="show_folder(&#39;1_1_10_7&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_10_7" class="foldopened" onclick="hide_folder(&#39;1_1_10_7&#39;)" style="visibility: hidden; position: absolute;">-</span>
+BDD
+<ul id="fold1_1_10_7" style="position: absolute; visibility: hidden;"><li>Behavior Driven Development
+
+</li>
+<li>human readable/writable test
+
+</li>
+
+</ul>
+</li>
+<li>mocking
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_11" class="foldclosed" onclick="show_folder(&#39;1_1_11&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_11" class="foldopened" onclick="hide_folder(&#39;1_1_11&#39;)" style="visibility: hidden; position: absolute;">-</span>
+UI design
+<ul id="fold1_1_11" style="position: absolute; visibility: hidden;"><li>visual
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_1_12" class="foldclosed" onclick="show_folder(&#39;1_1_12&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_1_12" class="foldopened" onclick="hide_folder(&#39;1_1_12&#39;)" style="visibility: hidden; position: absolute;">-</span>
+UX
+<ul id="fold1_1_12" style="position: absolute; visibility: hidden;"><li>User Experience
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2" class="foldclosed" onclick="show_folder(&#39;1_2&#39;)" style="position: relative; visibility: visible;">+</span> <span id="hide1_2" class="foldopened" onclick="hide_folder(&#39;1_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+0504
+<ul id="fold1_2" style="position: absolute; visibility: hidden;"><li><span id="show1_2_1" class="foldclosed" onclick="show_folder(&#39;1_2_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_1" class="foldopened" onclick="hide_folder(&#39;1_2_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+framework vs library
+<ul id="fold1_2_1" style="position: absolute; visibility: hidden;"><li>opinionated
+
+</li>
+
+</ul>
+</li>
+<li>golden hammer / silver bullet
+
+</li>
+<li><span id="show1_2_2" class="foldclosed" onclick="show_folder(&#39;1_2_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_2" class="foldopened" onclick="hide_folder(&#39;1_2_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+POC
+<ul id="fold1_2_2" style="position: absolute; visibility: hidden;"><li>Proof of Concept
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_3" class="foldclosed" onclick="show_folder(&#39;1_2_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_3" class="foldopened" onclick="hide_folder(&#39;1_2_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+3 tier application
+<ul id="fold1_2_3" style="position: absolute; visibility: hidden;"><li>client
+<ul><li>thin
+
+</li>
+<li>thick
+
+</li>
+<li><span id="show1_2_3_1" class="foldclosed" onclick="show_folder(&#39;1_2_3_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_3_1" class="foldopened" onclick="hide_folder(&#39;1_2_3_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+user interaction
+<ul id="fold1_2_3_1" style="position: absolute; visibility: hidden;"><li>show the data
+
+</li>
+<li>capture user commands
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>server
+<ul><li>authentation
+
+</li>
+<li>business logic
+<ul><li>authorisation
+
+</li>
+<li>calculation
+
+</li>
+<li>data (state) change
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_3_2" class="foldclosed" onclick="show_folder(&#39;1_2_3_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_3_2" class="foldopened" onclick="hide_folder(&#39;1_2_3_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+database
+<ul id="fold1_2_3_2" style="position: absolute; visibility: hidden;"><li>store state
+
+</li>
+<li>query
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>developer maturity
+
+</li>
+<li><span id="show1_2_4" class="foldclosed" onclick="show_folder(&#39;1_2_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_4" class="foldopened" onclick="hide_folder(&#39;1_2_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+acronyms
+<ul id="fold1_2_4" style="position: absolute; visibility: hidden;"><li><span id="show1_2_4_1" class="foldclosed" onclick="show_folder(&#39;1_2_4_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_4_1" class="foldopened" onclick="hide_folder(&#39;1_2_4_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+SPA
+<ul id="fold1_2_4_1" style="position: absolute; visibility: hidden;"><li>single page application
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_4_2" class="foldclosed" onclick="show_folder(&#39;1_2_4_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_4_2" class="foldopened" onclick="hide_folder(&#39;1_2_4_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+PWA
+<ul id="fold1_2_4_2" style="position: absolute; visibility: hidden;"><li>progressive web app (lication)
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_4_3" class="foldclosed" onclick="show_folder(&#39;1_2_4_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_4_3" class="foldopened" onclick="hide_folder(&#39;1_2_4_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+AA
+<ul id="fold1_2_4_3" style="position: absolute; visibility: hidden;"><li>authentication
+<ul><li>azonosítás
+
+</li>
+
+</ul>
+</li>
+<li>authorisation
+<ul><li>engedélyezés
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_4_4" class="foldclosed" onclick="show_folder(&#39;1_2_4_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_4_4" class="foldopened" onclick="hide_folder(&#39;1_2_4_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+i18n
+<ul id="fold1_2_4_4" style="position: absolute; visibility: hidden;"><li>internationalisation
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_4_5" class="foldclosed" onclick="show_folder(&#39;1_2_4_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_4_5" class="foldopened" onclick="hide_folder(&#39;1_2_4_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+k8s
+<ul id="fold1_2_4_5" style="position: absolute; visibility: hidden;"><li>kubernetes
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_4_6" class="foldclosed" onclick="show_folder(&#39;1_2_4_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_4_6" class="foldopened" onclick="hide_folder(&#39;1_2_4_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+MVC
+<ul id="fold1_2_4_6" style="position: absolute; visibility: hidden;"><li>model
+
+</li>
+<li>view
+
+</li>
+<li>controller
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_5" class="foldclosed" onclick="show_folder(&#39;1_2_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_5" class="foldopened" onclick="hide_folder(&#39;1_2_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+XML
+<ul id="fold1_2_5" style="position: absolute; visibility: hidden;"><li>Extendible Markup Language
+
+</li>
+<li>&lt;tag attribute="value"&gt; &lt;tag2/&gt; &lt;/tag&gt;
+
+</li>
+<li>schema definition
+
+</li>
+<li>namespace
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_6" class="foldclosed" onclick="show_folder(&#39;1_2_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_6" class="foldopened" onclick="hide_folder(&#39;1_2_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+HTML
+<ul id="fold1_2_6" style="position: absolute; visibility: hidden;"><li>Hypertext Markup Language
+<ul><li>XML extension
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7" class="foldclosed" onclick="show_folder(&#39;1_2_7&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7" class="foldopened" onclick="hide_folder(&#39;1_2_7&#39;)" style="visibility: hidden; position: absolute;">-</span>
+http
+<ul id="fold1_2_7" style="position: absolute; visibility: hidden;"><li><span id="show1_2_7_1" class="foldclosed" onclick="show_folder(&#39;1_2_7_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_1" class="foldopened" onclick="hide_folder(&#39;1_2_7_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+protocol
+<ul id="fold1_2_7_1" style="position: absolute; visibility: hidden;"><li>how to create and interpret bytes on the stream
+
+</li>
+
+</ul>
+</li>
+<li>HTTP
+<ul><li>hypertext transfer protocol
+
+</li>
+<li>hotpotato
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_2" class="foldclosed" onclick="show_folder(&#39;1_2_7_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_2" class="foldopened" onclick="hide_folder(&#39;1_2_7_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+SSL
+<ul id="fold1_2_7_2" style="position: absolute; visibility: hidden;"><li>secure socket layer
+<ul><li>encyrpt/descript both way of communication
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>HTTPS
+<ul><li>http over SSL
+
+</li>
+<li>hotpotatoes
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_3" class="foldclosed" onclick="show_folder(&#39;1_2_7_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_3" class="foldopened" onclick="hide_folder(&#39;1_2_7_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+URI, URL
+<ul id="fold1_2_7_3" style="position: absolute; visibility: hidden;"><li>Uniform Resource Identifier / Locator
+
+</li>
+<li>protocol :// host &nbsp;: port / path ? querystring (parameter=value) # fragment
+
+</li>
+<li>host
+<ul><li>subdomain.domain.TLD (top level domain)
+
+</li>
+
+</ul>
+</li>
+<li>ipv4, ivp6
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_4" class="foldclosed" onclick="show_folder(&#39;1_2_7_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_4" class="foldopened" onclick="hide_folder(&#39;1_2_7_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+CORS
+<ul id="fold1_2_7_4" style="position: absolute; visibility: hidden;"><li>Cross Origin Resource Sharing
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_5" class="foldclosed" onclick="show_folder(&#39;1_2_7_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_5" class="foldopened" onclick="hide_folder(&#39;1_2_7_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+HTTP verbs
+<ul id="fold1_2_7_5" style="position: absolute; visibility: hidden;"><li>GET
+
+</li>
+<li>POST
+
+</li>
+<li>PUT
+
+</li>
+<li>DELETE
+
+</li>
+<li>HEAD
+
+</li>
+<li>OPTION
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_6" class="foldclosed" onclick="show_folder(&#39;1_2_7_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6" class="foldopened" onclick="hide_folder(&#39;1_2_7_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+HTTP status
+<ul id="fold1_2_7_6" style="position: absolute; visibility: hidden;"><li><span id="show1_2_7_6_1" class="foldclosed" onclick="show_folder(&#39;1_2_7_6_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6_1" class="foldopened" onclick="hide_folder(&#39;1_2_7_6_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+1xx
+<ul id="fold1_2_7_6_1" style="position: absolute; visibility: hidden;"><li>information
+
+</li>
+<li>more to come
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_6_2" class="foldclosed" onclick="show_folder(&#39;1_2_7_6_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6_2" class="foldopened" onclick="hide_folder(&#39;1_2_7_6_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+2xx
+<ul id="fold1_2_7_6_2" style="position: absolute; visibility: hidden;"><li>success
+
+</li>
+<li>200
+<ul><li>OK
+
+</li>
+
+</ul>
+</li>
+<li>201
+<ul><li>created
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_6_3" class="foldclosed" onclick="show_folder(&#39;1_2_7_6_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6_3" class="foldopened" onclick="hide_folder(&#39;1_2_7_6_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+3xx
+<ul id="fold1_2_7_6_3" style="position: absolute; visibility: hidden;"><li>redirect
+
+</li>
+<li><span id="show1_2_7_6_3_1" class="foldclosed" onclick="show_folder(&#39;1_2_7_6_3_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6_3_1" class="foldopened" onclick="hide_folder(&#39;1_2_7_6_3_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+history
+<ul id="fold1_2_7_6_3_1" style="position: absolute; visibility: hidden;"><li>301
+<ul><li>moved permanently
+
+</li>
+
+</ul>
+</li>
+<li>302
+<ul><li>moved temporarily
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_6_3_2" class="foldclosed" onclick="show_folder(&#39;1_2_7_6_3_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6_3_2" class="foldopened" onclick="hide_folder(&#39;1_2_7_6_3_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+303
+<ul id="fold1_2_7_6_3_2" style="position: absolute; visibility: hidden;"><li>see other
+
+</li>
+<li>after a succesful operation (POST/PUT/DELETE)
+
+</li>
+<li>the client can check the new resource on the URL
+
+</li>
+
+</ul>
+</li>
+<li>307
+<ul><li>temp redirect
+
+</li>
+
+</ul>
+</li>
+<li>308
+<ul><li>perm redirect
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_6_4" class="foldclosed" onclick="show_folder(&#39;1_2_7_6_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6_4" class="foldopened" onclick="hide_folder(&#39;1_2_7_6_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+4xx
+<ul id="fold1_2_7_6_4" style="position: absolute; visibility: hidden;"><li>client error
+
+</li>
+<li>400
+<ul><li>bad request
+
+</li>
+
+</ul>
+</li>
+<li>401
+<ul><li>unauthorised
+
+</li>
+
+</ul>
+</li>
+<li>402
+<ul><li>payment required
+
+</li>
+
+</ul>
+</li>
+<li>403
+<ul><li>forbidden
+
+</li>
+
+</ul>
+</li>
+<li>404
+<ul><li>not found
+
+</li>
+
+</ul>
+</li>
+<li>405
+<ul><li>method not allowed
+
+</li>
+
+</ul>
+</li>
+<li>408
+<ul><li>request timeout
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_6_5" class="foldclosed" onclick="show_folder(&#39;1_2_7_6_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_6_5" class="foldopened" onclick="hide_folder(&#39;1_2_7_6_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+5xx
+<ul id="fold1_2_7_6_5" style="position: absolute; visibility: hidden;"><li>server error
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_7" class="foldclosed" onclick="show_folder(&#39;1_2_7_7&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_7" class="foldopened" onclick="hide_folder(&#39;1_2_7_7&#39;)" style="visibility: hidden; position: absolute;">-</span>
+headers
+<ul id="fold1_2_7_7" style="position: absolute; visibility: hidden;"><li>https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_8" class="foldclosed" onclick="show_folder(&#39;1_2_7_8&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_8" class="foldopened" onclick="hide_folder(&#39;1_2_7_8&#39;)" style="visibility: hidden; position: absolute;">-</span>
+request
+<ul id="fold1_2_7_8" style="position: absolute; visibility: hidden;"><li>verb, url
+
+</li>
+<li>headers
+
+</li>
+<li>body
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_7_9" class="foldclosed" onclick="show_folder(&#39;1_2_7_9&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_7_9" class="foldopened" onclick="hide_folder(&#39;1_2_7_9&#39;)" style="visibility: hidden; position: absolute;">-</span>
+response
+<ul id="fold1_2_7_9" style="position: absolute; visibility: hidden;"><li>status
+
+</li>
+<li>headers
+
+</li>
+<li>body
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_2_8" class="foldclosed" onclick="show_folder(&#39;1_2_8&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_2_8" class="foldopened" onclick="hide_folder(&#39;1_2_8&#39;)" style="visibility: hidden; position: absolute;">-</span>
+security
+<ul id="fold1_2_8" style="position: absolute; visibility: hidden;"><li>"nincs bevehetetlen vár, csak kevés katona"
+
+</li>
+<li>fort knox
+
+</li>
+<li>gain &lt;&lt; effort
+<ul><li>pénz
+
+</li>
+<li>bosszú
+
+</li>
+<li>hírnév
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3" class="foldclosed" onclick="show_folder(&#39;1_3&#39;)" style="position: relative; visibility: visible;">+</span> <span id="hide1_3" class="foldopened" onclick="hide_folder(&#39;1_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+0505
+<ul id="fold1_3" style="position: absolute; visibility: hidden;"><li>https://stackoverflow.com/questions/17326185/what-are-the-different-kinds-of-cases
+
+</li>
+<li>Good decisions come from experience, experience come from bad decisions
+
+</li>
+<li><span id="show1_3_1" class="foldclosed" onclick="show_folder(&#39;1_3_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_1" class="foldopened" onclick="hide_folder(&#39;1_3_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+design patterns
+<ul id="fold1_3_1" style="position: absolute; visibility: hidden;"><li>GOF
+<ul><li>Gang of Four
+
+</li>
+<li>1994
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_2" class="foldclosed" onclick="show_folder(&#39;1_3_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_2" class="foldopened" onclick="hide_folder(&#39;1_3_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+clean code
+<ul id="fold1_3_2" style="position: absolute; visibility: hidden;"><li>http://blog.cleancoder.com/
+
+</li>
+<li>readability, maintainability
+
+</li>
+<li>tools
+<ul><li>cyclomatic complexity
+
+</li>
+<li>naming
+<ul><li>variables
+
+</li>
+<li>functions
+
+</li>
+<li>classes
+
+</li>
+
+</ul>
+</li>
+<li>source formatting
+
+</li>
+<li>use design patterns
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_3" class="foldclosed" onclick="show_folder(&#39;1_3_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_3" class="foldopened" onclick="hide_folder(&#39;1_3_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+rendszer komplexitás
+<ul id="fold1_3_3" style="position: absolute; visibility: hidden;"><li>komponensek száma
+
+</li>
+<li>komponensek tipusainak száma
+
+</li>
+<li>kapcsolat száma
+
+</li>
+<li>kapcsolat tipusainak száma
+
+</li>
+<li>alacsonyan tartás: modularizáció
+
+</li>
+
+</ul>
+</li>
+<li>Risk Driven Development
+
+</li>
+<li><span id="show1_3_4" class="foldclosed" onclick="show_folder(&#39;1_3_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_4" class="foldopened" onclick="hide_folder(&#39;1_3_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+typescript
+<ul id="fold1_3_4" style="position: absolute; visibility: hidden;"><li>https://www.linkedin.com/learning/typescript-object-oriented-programming
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_5" class="foldclosed" onclick="show_folder(&#39;1_3_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_5" class="foldopened" onclick="hide_folder(&#39;1_3_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+program vs software vs application
+<ul id="fold1_3_5" style="position: absolute; visibility: hidden;"><li>program: egy feladatra megoldást adó programrészlet
+
+</li>
+<li>software: egy feladatkörben jellemz&#337; feladatok ellátását végz&#337; program együttes
+
+</li>
+<li>application: feladatkörben dolgozó felhasználó igényeit kielégít&#337; software együttes.
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6" class="foldclosed" onclick="show_folder(&#39;1_3_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6" class="foldopened" onclick="hide_folder(&#39;1_3_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+rules
+<ul id="fold1_3_6" style="position: absolute; visibility: hidden;"><li><span id="show1_3_6_1" class="foldclosed" onclick="show_folder(&#39;1_3_6_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_1" class="foldopened" onclick="hide_folder(&#39;1_3_6_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Lister’s Law
+<ul id="fold1_3_6_1" style="position: absolute; visibility: hidden;"><li>“People under time pressure don’t think faster”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_2" class="foldclosed" onclick="show_folder(&#39;1_3_6_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_2" class="foldopened" onclick="hide_folder(&#39;1_3_6_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Brooks’ law
+<ul id="fold1_3_6_2" style="position: absolute; visibility: hidden;"><li>“Adding human resources to a late software project makes it later”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_3" class="foldclosed" onclick="show_folder(&#39;1_3_6_3&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_3" class="foldopened" onclick="hide_folder(&#39;1_3_6_3&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Frisch’s Law
+<ul id="fold1_3_6_3" style="position: absolute; visibility: hidden;"><li>“You cannot have a baby in one month by getting nine women pregnant.”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_4" class="foldclosed" onclick="show_folder(&#39;1_3_6_4&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_4" class="foldopened" onclick="hide_folder(&#39;1_3_6_4&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Hofstadter’s law
+<ul id="fold1_3_6_4" style="position: absolute; visibility: hidden;"><li>“It always takes longer than you expect. Even when you factor in Hofstadter’s law.”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_5" class="foldclosed" onclick="show_folder(&#39;1_3_6_5&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_5" class="foldopened" onclick="hide_folder(&#39;1_3_6_5&#39;)" style="visibility: hidden; position: absolute;">-</span>
+The 90-90 Rule
+<ul id="fold1_3_6_5" style="position: absolute; visibility: hidden;"><li><p>“The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.”
+</p></li>
+</ul>
+</li>
+<li><span id="show1_3_6_6" class="foldclosed" onclick="show_folder(&#39;1_3_6_6&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_6" class="foldopened" onclick="hide_folder(&#39;1_3_6_6&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Parkinson’s Law
+<ul id="fold1_3_6_6" style="position: absolute; visibility: hidden;"><li>“Work expands so as to fill the time available for its completion”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_7" class="foldclosed" onclick="show_folder(&#39;1_3_6_7&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_7" class="foldopened" onclick="hide_folder(&#39;1_3_6_7&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Conway’s law
+<ul id="fold1_3_6_7" style="position: absolute; visibility: hidden;"><li>“Any piece of software reflects the organisational communication structure that produced it.”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_8" class="foldclosed" onclick="show_folder(&#39;1_3_6_8&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_8" class="foldopened" onclick="hide_folder(&#39;1_3_6_8&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Dilbert Principle and Peter Principle
+<ul id="fold1_3_6_8" style="position: absolute; visibility: hidden;"><li>“In a hierarchy every employee tends to rise to his level of incompetence.”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_9" class="foldclosed" onclick="show_folder(&#39;1_3_6_9&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_9" class="foldopened" onclick="hide_folder(&#39;1_3_6_9&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Gall’s law
+<ul id="fold1_3_6_9" style="position: absolute; visibility: hidden;"><li><p>“A complex system that works has evolved from a simple system that worked. A complex system built from scratch won’t work.”
+</p></li>
+</ul>
+</li>
+<li><span id="show1_3_6_10" class="foldclosed" onclick="show_folder(&#39;1_3_6_10&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_10" class="foldopened" onclick="hide_folder(&#39;1_3_6_10&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Lubarsky’s law
+<ul id="fold1_3_6_10" style="position: absolute; visibility: hidden;"><li>“There’s always one more bug.”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_11" class="foldclosed" onclick="show_folder(&#39;1_3_6_11&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_11" class="foldopened" onclick="hide_folder(&#39;1_3_6_11&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Occam’s Razor
+<ul id="fold1_3_6_11" style="position: absolute; visibility: hidden;"><li>“The simplest solution is most likely the right one.”
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_12" class="foldclosed" onclick="show_folder(&#39;1_3_6_12&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_12" class="foldopened" onclick="hide_folder(&#39;1_3_6_12&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Dunning-Kruger Effect
+<ul id="fold1_3_6_12" style="position: absolute; visibility: hidden;"><li>
+    <img src="./prerequisite_files/szoftverfejleszt&#337; oktatás_1038622794058631457.jpeg">
+  
+</li>
+</ul>
+</li>
+<li><span id="show1_3_6_13" class="foldclosed" onclick="show_folder(&#39;1_3_6_13&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_13" class="foldopened" onclick="hide_folder(&#39;1_3_6_13&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Humphrey’s Law
+<ul id="fold1_3_6_13" style="position: absolute; visibility: hidden;"><li><p>“For a new software system, the requirements will not be completely known until after the users have used it.”
+</p></li>
+</ul>
+</li>
+<li><span id="show1_3_6_14" class="foldclosed" onclick="show_folder(&#39;1_3_6_14&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_14" class="foldopened" onclick="hide_folder(&#39;1_3_6_14&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Jakob’s Law of the Internet User Experience
+<ul id="fold1_3_6_14" style="position: absolute; visibility: hidden;"><li><p>“Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know.”
+</p></li>
+</ul>
+</li>
+<li><span id="show1_3_6_15" class="foldclosed" onclick="show_folder(&#39;1_3_6_15&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_15" class="foldopened" onclick="hide_folder(&#39;1_3_6_15&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Kernighan’s Law
+<ul id="fold1_3_6_15" style="position: absolute; visibility: hidden;"><li><p>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
+</p></li>
+</ul>
+</li>
+<li><span id="show1_3_6_16" class="foldclosed" onclick="show_folder(&#39;1_3_6_16&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_16" class="foldopened" onclick="hide_folder(&#39;1_3_6_16&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Sturgeon's Revelation
+<ul id="fold1_3_6_16" style="position: absolute; visibility: hidden;"><li>"90% of everything is crud."
+<ul><li>Create
+
+</li>
+<li>Retrieve
+
+</li>
+<li>Update
+
+</li>
+<li>Delete
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_17" class="foldclosed" onclick="show_folder(&#39;1_3_6_17&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_17" class="foldopened" onclick="hide_folder(&#39;1_3_6_17&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Greenspun's 10th Rule of Programming
+<ul id="fold1_3_6_17" style="position: absolute; visibility: hidden;"><li><p>Any custom developed authentication system contains an ad hoc, informally-specified, bug-ridden, slow implementation of half of Kerberos.
+</p></li>
+</ul>
+</li>
+<li><span id="show1_3_6_18" class="foldclosed" onclick="show_folder(&#39;1_3_6_18&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_18" class="foldopened" onclick="hide_folder(&#39;1_3_6_18&#39;)" style="visibility: hidden; position: absolute;">-</span>
+The Law of Demeter
+<ul id="fold1_3_6_18" style="position: absolute; visibility: hidden;"><li>Don’t talk to strangers.
+
+</li>
+<li><span id="show1_3_6_18_1" class="foldclosed" onclick="show_folder(&#39;1_3_6_18_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_18_1" class="foldopened" onclick="hide_folder(&#39;1_3_6_18_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+“The Principle of Least Knowledge”
+<ul id="fold1_3_6_18_1" style="position: absolute; visibility: hidden;"><li><p>Each unit should have only limited knowledge about other units: only units related to the current unit.
+</p><p>Each unit should only talk to its friends; don’t talk to strangers.
+</p><p>Only talk to your immediate friends.
+</p></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_6_19" class="foldclosed" onclick="show_folder(&#39;1_3_6_19&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_6_19" class="foldopened" onclick="hide_folder(&#39;1_3_6_19&#39;)" style="visibility: hidden; position: absolute;">-</span>
+Pareto Principle
+<ul id="fold1_3_6_19" style="position: absolute; visibility: hidden;"><li>“For many events, roughly 80% of the effects come from 20% of the causes”
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_7" class="foldclosed" onclick="show_folder(&#39;1_3_7&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_7" class="foldopened" onclick="hide_folder(&#39;1_3_7&#39;)" style="visibility: hidden; position: absolute;">-</span>
+waterfall vs agile
+<ul id="fold1_3_7" style="position: absolute; visibility: hidden;"><li><span id="show1_3_7_1" class="foldclosed" onclick="show_folder(&#39;1_3_7_1&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_7_1" class="foldopened" onclick="hide_folder(&#39;1_3_7_1&#39;)" style="visibility: hidden; position: absolute;">-</span>
+waterfall
+<ul id="fold1_3_7_1" style="position: absolute; visibility: hidden;"><li>specikáció
+
+</li>
+<li>megvalósítás
+
+</li>
+<li>átadás
+
+</li>
+<li>fizetés
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3_7_2" class="foldclosed" onclick="show_folder(&#39;1_3_7_2&#39;)" style="position: absolute; visibility: hidden;">+</span> <span id="hide1_3_7_2" class="foldopened" onclick="hide_folder(&#39;1_3_7_2&#39;)" style="visibility: hidden; position: absolute;">-</span>
+agile
+<ul id="fold1_3_7_2" style="position: absolute; visibility: hidden;"><li>iterative
+
+</li>
+<li>shooting on a moving target
+
+</li>
+<li>quick feedback cycle
+
+</li>
+
+</ul>
+</li>
+<li>iterative delivery
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><script type="text/javascript">
+fold_document();
+</script>
+
+
+</body></html>
