@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="topBlock">
+        <div id="topNav">
+            <div id="topNavIcons">
+                <span><a href="">Gmail</a></span>
+                <span><a href="">Képek</a></span>
+                <span></span>
+                <span><a href="">Log</a></span>                
+            </div>
+        </div>
+    </div>
+
+    <div id="logo">
+        <img src="logo.png" alt="">
+    </div>
+
+    <div id="centerBlock">
+        <form action="">
+            <div id="searchBar">
+                <span></span>
+                <input type="text">
+                <span id="keybMic">
+                    <div></div>
+                    <div></div>                    
+                </span>
+            </div>
+        </form>
+        <div id="twoButton">
+            <input type="button" value="Google-keresés">
+            <input type="button" value="Jó napom van">
+        </div>
+    </div>
+    <div id="available">
+        <span>
+            <p>
+                A google elérhető: <a id="lang" href="">English</a>
+            </p>
+        </span>
+    </div>
+    <div id="footer">
+        <div id="footer1">
+            <p>Magyarország</p>
+        </div>
+        <div id="footer2">
+            <ul>
+                <li>Névjegy</li>
+                <li>Hirdetés</li>
+                <li>Vállalkozás</li>
+                <li>A keresés működése</li>
+            </ul>
+            <ul>
+                <li>Adatvédelem</li>
+                <li>Általános Szerződési Feltételek</li>
+                <li>Beállítások</li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        *{padding: 0; margin: 0; box-sizing: border-box; font-size: 13px; font-family: arial, sans-serif; color: rgba(0,0,0,0.87); list-style-type: none;
+        }
+        a{text-decoration: none;
+        }
+        #topBlock{display: flex; justify-content: flex-end; align-items: center; height: 60px; padding: 6px;
+        }
+        #topNav{display: flex; flex-flow: row nowrap; justify-content: flex-end;}
+        #topNavIcons{padding-right: 10px;
+        }
+        #topNavIcons span{padding-left: 15px;
+        }
+        #topNavIcons :nth-child(3){background: url('dots.png') no-repeat center/contain;width: 50px; height: 24px;}
+        #logo{display: flex; justify-content: center;
+        }
+        #centerBlock{display: flex; flex-flow: column nowrap; align-items: center; padding: 20px;
+        height: 154px;}
+        form{display: flex; align-items: center; border: 1px solid #dfe1e5; border-radius:24px; height: 44px; width: 586px;}
+        form:hover, #twoButton input:hover{box-shadow: 0 1px 6px rgb(32 33 36 / 28%); border: 1px solid #dadce0;}
+        #searchBar{display: flex; flex-flow: row nowrap; justify-content: space-evenly; align-items: center; width: 100%;}
+        #searchBar :first-child{background: url('search.png') no-repeat center/contain;width: 50px; height: 14px;}
+        #searchBar input{width: 80%; border: none; outline: none; height: 40px;}
+        #keybMic{padding-left: 10px; padding-right: 10px; display: flex; flex-flow: row nowrap;}
+        #keybMic :first-child{background: url('//www.gstatic.com/inputtools/images/tia.png') no-repeat center;width: 24px; height: 24px;}
+        #keybMic :nth-child(2){background: url('mic.png') no-repeat center/contain;width: 50px; height: 24px;}
+        #twoButton{height: 70px; padding-top: 18px; display: flex; align-items: center;}
+        #twoButton input{border: 1px solid white; outline: none; background-color:#f8f9fa; margin: 0 4px; padding: 0 16px; height: 36px; border-radius: 4px; font-size: 14px;}
+        #available{display: flex; justify-content: center;}
+        #lang{color: #1a0dab;}
+        #footer{position: absolute; bottom: 0; width: 100vw; background-color: #f2f2f2;}
+        #footer1{border-bottom: 1px solid #dadce0;padding-left: 15px;}
+        #footer2{display: flex; flex-flow: row nowrap; justify-content: space-evenly;}
+        #footer2 ul{display: flex; flex-flow: row nowrap; justify-content: space-evenly;}
+        #footer1 p, #footer2 ul li{ color: rgba(0,0,0,.54); font-size: 15px; padding: 15px;}
+        #footer2 ul li{font-size: 14px;}
+
+    </style>
+</body>
+</html>
