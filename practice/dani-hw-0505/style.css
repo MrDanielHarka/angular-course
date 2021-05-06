@@ -1,0 +1,136 @@
+:root {
+  background: linear-gradient(303deg, #a0ff97, #01ac00);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 13%;
+  }
+  50% {
+    background-position: 100% 88%;
+  }
+  100% {
+    background-position: 0% 13%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 13%;
+  }
+  50% {
+    background-position: 100% 88%;
+  }
+  100% {
+    background-position: 0% 13%;
+  }
+}
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 13%;
+  }
+  50% {
+    background-position: 100% 88%;
+  }
+  100% {
+    background-position: 0% 13%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 13%;
+  }
+  50% {
+    background-position: 100% 88%;
+  }
+  100% {
+    background-position: 0% 13%;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+details {
+  /* font: 16px "Open Sans", Calibri, sans-serif; */
+  width: 21rem;
+  display: flex;
+  align-self: center;
+  padding: 0.5em;
+  /* background-color: darkkhaki; */
+}
+
+details > summary {
+  padding: 2px 6px;
+  background-color: #ddd;
+  border: none;
+  box-shadow: 3px 3px 4px black;
+  cursor: pointer;
+}
+
+details > p {
+  /* border-radius: 0 0 10px 10px; */
+  background-color: #ddd;
+  padding: 2px 6px;
+  margin: 0;
+  box-shadow: 3px 3px 4px black;
+}
+
+details[open] > summary {
+  background-color: rgb(239, 239, 255);
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  display: inline;
+}
+
+.assignment {
+  display: flex;
+  align-content: center;
+}
+
+.assignment > label {
+  color: rgb(231, 0, 0);
+}
+
+.check:checked ~ div {
+  background-color: rgb(231, 0, 0);
+}
+
+input:checked {
+  color: red;
+}
+
+/* Labels for checked inputs */
+input:checked + label {
+  color: green;
+}
+
+img {
+  width: 22px;
+  border-radius: 50%;
+}
+
+.assigned {
+  display: flex;
+}
+
+.assigned > div {
+  padding-right: 0.5rem;
+}
+
+.bold {
+  font-weight: bold;
+}
