@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>What to do?</h1>
+            <form action="" class="addTasks">
+                <label for="addBrief">Brief</label>
+                <input type="text" name="addBrief" class="addBrief">
+                <label for="addDesc">Description</label>
+                <input type="text" name="addDesc" class="addDesc">
+                <label for="addDl">Deadline</label>
+                <input type="text" name="addDl" class="addDl">
+                <label for="addAss">Assignee</label>
+                <input type="text" name="addAss" class="AddAss">
+                <button>Add Task</button>
+            </form>
+        </header>
+        <div class="taskList">
+            <div class="task">
+                <h3 class="Brief">Make a todo list</h3>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod officiis reprehenderit odio perferendis voluptate consectetur aperiam modi a obcaecati culpa facere, dolor rerum necessitatibus sequi labore, impedit autem molestias sunt?</p>
+                <p class="deadline">2021/05/06</p>
+                <select name="status" class="status">
+                    <option value="ON-HOLD">ON-HOLD</option>
+                    <option value="TODO">TODO</option>
+                    <option value="IN-PROGRESS">IN-PROGRESS</option>
+                    <option value="DONE">DONE</option>
+                </select>
+                <div class="onHover">
+                    <h4>Adrian Szabo</h4>
+                    <p>Trainee</p>
+                    <p>mradrianszabo@gmail.com</p>
+                </div>            </div>
+            <div class="task">
+                <h3 class="Brief">Make another todo list</h3>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod officiis reprehenderit odio perferendis voluptate consectetur aperiam modi a obcaecati culpa facere, dolor rerum necessitatibus sequi labore, impedit autem molestias sunt?</p>
+                <p class="deadline">2021/05/06</p>
+                <select name="status" class="status">
+                    <option value="ON-HOLD">ON-HOLD</option>
+                    <option value="TODO">TODO</option>
+                    <option value="IN-PROGRESS">IN-PROGRESS</option>
+                    <option value="DONE">DONE</option>
+                </select>
+                <div class="onHover">
+                    <h4>Adrian Szabo</h4>
+                    <p>Trainee</p>
+                    <p>mradrianszabo@gmail.com</p>
+                </div>
+            </div>
+            <div class="task">
+                <h3 class="Brief">Make one more todo list</h3>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod officiis reprehenderit odio perferendis voluptate consectetur aperiam modi a obcaecati culpa facere, dolor rerum necessitatibus sequi labore, impedit autem molestias sunt?</p>
+                <p class="deadline">2021/05/06</p>
+                <select name="status" class="status">
+                    <option value="ON-HOLD">ON-HOLD</option>
+                    <option value="TODO">TODO</option>
+                    <option value="IN-PROGRESS">IN-PROGRESS</option>
+                    <option value="DONE">DONE</option>
+                </select>
+                <div class="onHover">
+                    <h4>Adrian Szabo</h4>
+                    <p>Trainee</p>
+                    <p>mradrianszabo@gmail.com</p>
+                </div>            </div>
+        </div>
+    </div>
+<style>
+    *{padding: 0; margin: 0; box-sizing: border-box; color: rgb(24, 24, 24); font-family: Arial, Helvetica, sans-serif;}
+    .container{margin: 0 auto; width: 20em; background-color: rgb(243, 167, 222);}
+    header{border-bottom: 1px solid rgb(56, 32, 49); border-radius: 15px; box-shadow: 0 5px 5px -3px rgb(56, 32, 49);}
+    header h1{text-align: center;}
+    header form{width: 80%; display: flex; flex-flow: row wrap; justify-content: space-between; align-content: space-around; height: 7em; margin: 0 auto;}
+    header form button{width: 100%; border-radius: 5px; background-color: rgb(56, 32, 49); color: rgb(243, 167, 222); border:  none;}
+    input{border-radius: 5px; border:1px solid rgb(24, 24, 24);}
+    .taskList{ border-top: 1px solid rgb(56, 32, 49); border-radius: 15px; padding: 1em; margin-top: 0.5em; box-shadow: 0 -5px 5px -3px rgb(56, 32, 49);}
+    .task{border-radius: 15px; border: 1px solid rgb(56, 32, 49); padding: 1em; margin-bottom: 1em; background-color: rgb(238, 143, 211); transition: all 0.3s ease;}
+    .task:hover{transform: translateY(-0.2em); box-shadow: 0 3px 3px -1px;}
+    .description{font-size: 0.85em;}
+    .deadline{font-weight: bold;}
+    .status{border-radius: 5px;}
+    .onHover{overflow: hidden; height: 1em; transition: all 0.5s ease; cursor: pointer; width: 50%;}
+    .onHover:hover{height: 4em; width: 100%;}
+</style>
+</body>
+</html>
