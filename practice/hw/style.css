@@ -101,7 +101,7 @@ input {
   align-content: center;
 }
 
-.assignment > label {
+.assignment > span {
   color: rgb(231, 0, 0);
 }
 
@@ -114,7 +114,7 @@ input:checked {
 }
 
 /* Labels for checked inputs */
-input:checked + label {
+input:checked + span {
   color: green;
 }
 
