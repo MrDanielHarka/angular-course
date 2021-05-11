@@ -97,7 +97,7 @@ export class Contact {
 \
 `6.` Using `ctrl+space` we "connect" `contact.component.ts` with other documents, so the _import_ lines appear automatically.
 
-> Without this, then the different parts of the app are not able to "talk to" each other.
+> Without this the different parts of the app are not able to "talk to" each other.
 
 \
 `7.` Replacing the contents of `app.component.html` with the following:
