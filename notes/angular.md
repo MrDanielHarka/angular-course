@@ -33,14 +33,10 @@ Opening live update in browser:
 # go
 ```
 
-**Done: <input type="checkbox">**
-
 ## Creating an example component
 
 \
 `1.` Creating a `contact` directory for the wanted component, in the `project/src/app` directory. _Contact_ is the example this time, hence the _contact_ naming.
-
-**Done: <input type="checkbox">**
 
 \
 `2.` Creating a `Contact.ts` file in `project/src/app/contact` for the class to be _exported_ and fill in the following:
@@ -55,8 +51,6 @@ export class Contact {
 
 > This is the class file.
 
-**Done: <input type="checkbox">**
-
 \
 `3.` Creating a `contact.component.css` file in `project/src/app/contact` and _css_ will be written here later on. This is just an example:
 
@@ -68,8 +62,6 @@ export class Contact {
 ```
 
 > This is the css file for the contact component.
-
-**Done: <input type="checkbox">**
 
 \
 `4.` Creating a `contact.component.html` file in `project/src/app/contact` and fill in:
@@ -84,8 +76,6 @@ export class Contact {
 ```
 
 > This is the html file for the contact component.
-
-**Done: <input type="checkbox">**
 
 \
 `5.` Creating a `contact.component.ts` file in `project/src/app/contact` and fill in:
@@ -104,14 +94,10 @@ export class Contact {
 
 > This is the ts file, which _imports_ ("collects") the templateUrl(html file), the styleUrls(css files) and exports it, with the _app-contact_ selector name.
 
-**Done: <input type="checkbox">**
-
 \
 `6.` Using `ctrl+space` we "connect" `contact.component.ts` with other documents, so the _import_ lines appear automatically.
 
 > Without this, then the different parts of the app are not able to "talk to" each other.
-
-**Done: <input type="checkbox">**
 
 \
 `7.` Replacing the contents of `app.component.html` with the following:
@@ -124,8 +110,6 @@ export class Contact {
 ```
 
 > Here mainContact is added as a name, which can be referred to by other parts of our application.
-
-**Done: <input type="checkbox">**
 
 \
 `8.` Adding the following to `app.component.ts` inside `export class ...`:
@@ -143,8 +127,6 @@ constructor() {
 
 > This way the app has access to mainContact and the constructor.
 
-**Done: <input type="checkbox">**
-
 \
 `9.` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
 
@@ -155,8 +137,6 @@ ContactComponent;
 ```
 
 > Now the ContactComponent is accessible for the app module.
-
-**Done: <input type="checkbox">**
 
 \
 ...and when all this is done, then you should have a simple working app... or not.
