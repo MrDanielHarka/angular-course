@@ -164,17 +164,17 @@ constructor() {
   this.contact1 = new Contact();
   this.contact1.name = 'Daniel Harka';
   this.contact1.phone = '+36 30 555 XXXX';
-  this.contact2.email = 'MrDanielHarka@gmail.com';
+  this.contact1.email = 'MrDanielHarka@gmail.com';
 
-  this.contact1 = new Contact();
-  this.contact1.name = 'Sara Harka';
-  this.contact1.phone = '+36 20 615 XXXX';
+  this.contact2 = new Contact();
+  this.contact2.name = 'Sara Harka';
+  this.contact2.phone = '+36 20 615 XXXX';
   this.contact2.email = 'MrsSaraHarka@gmail.com';
 
-  this.contact1 = new Contact();
-  this.contact1.name = 'David Harka';
-  this.contact1.phone = '+47 90 753 XXX ';
-  this.contact2.email = 'MrDavidHarka@gmail.com';
+  this.contact3 = new Contact();
+  this.contact3.name = 'David Harka';
+  this.contact3.phone = '+47 90 753 XXX ';
+  this.contact3.email = 'MrDavidHarka@gmail.com';
 
   // Pushing the contacts to the allContacts array.
   this.allContacts.push(this.contact1, this.contact2, this.contact3);
@@ -219,7 +219,7 @@ export class ContactListComponent {
 ```html
 <ul>
   <li *ngFor="let contact of contacts">
-    {{contact.name}} {{contact.phone}} {{contact.name}}
+    {{contact.name}} {{contact.phone}} {{contact.email}}
   </li>
 </ul>
 ```
@@ -227,16 +227,7 @@ export class ContactListComponent {
 > Importing contacts as a list.
 
 \
-`15.` Adding the following to `app.component.html`:
-
-```html
-<app-contact-list [contacts]="allContacts"></app-contact-list>
-```
-
-> Here app-contact-list is embedded.
-
-\
-`16.` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
+`15.` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
 
 ```ts
 ContactListComponent;
@@ -247,6 +238,16 @@ ContactListComponent;
 > Now the ContactComponent is accessible for the app module.
 
 \
+`16.` Adding the following to `app.component.html`:
+
+```html
+<app-contact-list [contacts]="allContacts"></app-contact-list>
+```
+
+> Here app-contact-list is embedded.
+
+\
+
 |
 
 |
