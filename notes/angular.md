@@ -33,13 +33,15 @@ Opening live update in browser:
 # go
 ```
 
+...or copying the given address to our browser.
+
 ## Creating an example component
 
 \
 `1.` Creating a `contact` directory for the wanted component, in the `project/src/app` directory. _Contact_ is the example this time, hence the _contact_ naming.
 
 \
-`2.` Creating a `Contact.ts` file in `project/src/app/contact` for the class to be _exported_ and fill in the following:
+`2.` Creating a `Contact.ts` file in `project/src/app/contact` for the class to be _exported_ and filling in the following:
 
 ```ts
 export class Contact {
@@ -64,7 +66,7 @@ export class Contact {
 > This is the css file for the contact component.
 
 \
-`4.` Creating a `contact.component.html` file in `project/src/app/contact` and fill in:
+`4.` Creating a `contact.component.html` file in `project/src/app/contact` and filling in:
 
 ```html
 <div>
@@ -78,7 +80,7 @@ export class Contact {
 > This is the html file for the contact component.
 
 \
-`5.` Creating a `contact.component.ts` file in `project/src/app/contact` and fill in:
+`5.` Creating a `contact.component.ts` file in `project/src/app/contact` and filling in:
 
 ```ts
 @Component({
@@ -86,13 +88,13 @@ export class Contact {
   templateUrl: "./contact.component.html",
   styleUrls: ["./contact.component.css"],
 })
-export class Contact {
+export class ContactComponent {
   @Input()
   contact: Contact;
 }
 ```
 
-> This is the ts file, which _imports_ ("collects") the templateUrl(html file), the styleUrls(css files) and exports it, with the _app-contact_ selector name.
+> This is the ts file, which _imports_ ("collects") the templateUrl(html file), the styleUrls(css files) and exports it with the _app-contact_ selector name.
 
 \
 `6.` Using `ctrl+space` we "connect" `contact.component.ts` with other documents, so the _import_ lines appear automatically.
@@ -100,7 +102,34 @@ export class Contact {
 > Without this the different parts of the app are not able to "talk to" each other.
 
 \
-`7.` Replacing the contents of `app.component.html` with the following:
+`7.` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
+
+```ts
+ContactComponent;
+
+// A comma is needed between declarations!
+```
+
+> Now the ContactComponent is accessible for the app module, if we connect with ctrl+space.
+
+\
+`8.` Adding the following to `app.component.ts` inside `export class`:
+
+```ts
+mainContact: Contact;
+
+constructor() {
+  this.mainContact = new Contact();
+  this.mainContact.name = 'Daniel Harka';
+  this.mainContact.phone = '+36 30 555 XXXX';
+  this.mainContact.email = 'MrDanielHarka@gmail.com';
+}
+```
+
+> This way the app has access to mainContact and the constructor.
+
+\
+`9.` Replacing the contents of `app.component.html` with the following:
 
 ```html
 <div>
@@ -112,35 +141,112 @@ export class Contact {
 > Here mainContact is added as a name, which can be referred to by other parts of our application.
 
 \
-`8.` Adding the following to `app.component.ts` inside `export class ...`:
+...and when all this is done, then you should have a simple, working app... or not.
+
+\
+`10.` Editing `app.component.ts` and adding this below `mainContact`:
 
 ```ts
-mainContact: Contact;
+allContacts: Contact[] = [];
+private contact1: Contact;
+private contact2: Contact;
+private contact3: Contact;
+```
 
+> This will make an array with the Contact class, where our contacts will be _pushed_.
+
+\
+`11.` Changing constructor to this:
+
+```ts
 constructor() {
-  this.mainContact = new Contact();
-  this.mainContact.name = "Daniel Harka";
-  this.mainContact.phone = "+36 30 555 XXXX";
-  this.mainContact.email = "MrDanielHarka@gmail.com";
+  // mainContact is changed to contact1 to be consistent!
+  this.contact1 = new Contact();
+  this.contact1.name = 'Daniel Harka';
+  this.contact1.phone = '+36 30 555 XXXX';
+  this.contact2.email = 'MrDanielHarka@gmail.com';
+
+  this.contact1 = new Contact();
+  this.contact1.name = 'Sara Harka';
+  this.contact1.phone = '+36 20 615 XXXX';
+  this.contact2.email = 'MrsSaraHarka@gmail.com';
+
+  this.contact1 = new Contact();
+  this.contact1.name = 'David Harka';
+  this.contact1.phone = '+47 90 753 XXX ';
+  this.contact2.email = 'MrDavidHarka@gmail.com';
+
+  // Pushing the contacts to the allContacts array.
+  this.allContacts.push(this.contact1, this.contact2, this.contact3);
+
+  // Since our chosen/main contact is referenced to as "mainContact", contact1 is assigned to mainContact.
+  this.mainContact = this.contact1;
 }
 ```
 
-> This way the app has access to mainContact and the constructor.
+> Changing main contact to contact1 and pushing the contacts to the allContacts array.
 
 \
-`9.` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
+`12.` Creating the following files in `project/src/app/contact`:
+
+- `contact-list.component.css`
+- `contact-list.component.html`
+- `contact-list.component.ts`
+
+> Creating files for our new component.
+
+\
+`13.` Adding the following to `contact-list.component.ts`:
 
 ```ts
-ContactComponent;
+@Component({
+  selector: "app-contact-list",
+  templateUrl: "./contact-list.component.html",
+  styleUrls: ["./contact-list.component.css"],
+})
+export class ContactListComponent {
+  @Input()
+  // Be aware of the "s" in contacts!
+  contacts: Contact;
+}
+```
 
-// A comma is needed, between declarations!
+> This is the ts file, which imports ("collects") the templateUrl(html file), the styleUrls(css files) and exports it with the app-contact-list selector name.
+
+\
+`14.` Adding the following to `contact-list.component.html`:
+
+```html
+<ul>
+  <li *ngFor="let contact of contacts">
+    {{contact.name}} {{contact.phone}} {{contact.name}}
+  </li>
+</ul>
+```
+
+> Importing contacts as a list.
+
+\
+`15.` Adding the following to `app.component.html`:
+
+```html
+<app-contact-list [contacts]="allContacts"></app-contact-list>
+```
+
+> Here app-contact-list is embedded.
+
+\
+`16.` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
+
+```ts
+ContactListComponent;
+
+// A comma is needed between declarations!
 ```
 
 > Now the ContactComponent is accessible for the app module.
 
 \
-...and when all this is done, then you should have a simple working app... or not.
-
 |
 
 |
@@ -171,4 +277,35 @@ asdasd
 </ng-container>
 
 {{data.contacts[0].name}}
+```
+
+````
+
+contact-list.component.html
+
+```html
+<li (click)="contactClicked(contact)">
+````
+
+```ts
+@Output()
+selectContact: new EventEmitter<Contact>();
+
+contactClicked(contact: Contact) {
+  this.selectContact.emit(contact);
+}
+```
+
+app-component.html
+
+```html
+<app-contact-list (selectContact)="contactSelected($event)"></app-contact-list>
+```
+
+app.component.ts
+
+```ts
+contactSelected(contact: Contact) {
+this.selectedContact = contact
+}
 ```
