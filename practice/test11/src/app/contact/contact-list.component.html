@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let contact of contactService.allContacts" (click)="contactClicked(contact)">
+    {{contact.name}}
+    {{contact.phone}}
+    {{contact.email}}
+  </li>
+</ul>
