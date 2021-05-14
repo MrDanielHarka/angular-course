@@ -1,0 +1,47 @@
+ng new contacts/tasks/accounts
+
+Contact
+  model
+    Contact
+      name: string
+      phone: string
+      email: string
+    Group
+      name: string
+      description: string
+      contacts: Contact[] (contact-list inputkent varja)
+  Components
+    ContactComponent, ContactListComponent, ContactPageComponent, ContactService
+    GroupComponent, GroupListComponent, GroupPageComponent, GroupService
+Task maganer
+  model
+    Task
+      brief: string
+      description: string
+      deadline: Date
+      status: "TODO"|"IN-PROGRESS"|"DONE"; //icon
+      tasks: Taks[]
+      assignee: Person
+    Person
+      name: string
+      idon: string //(url) icon
+  UI: task tree
+  Components
+    TaskComponent,
+      brief, status (icon), assignee (icon)
+      ul/li/TaskComponent tasks => tree
+    PersonComponent (popup, ha az assignee icon hover)
+Accounting
+  model
+    Account
+      name: string
+      tipus: "Individual"|"Company"
+      id: number
+      balance: number
+      transactions: Transaction[]
+    Transaction
+      from: Account
+      to: Account
+      amount: number
+  AccountComponent, AccountListComponent, AccountPageComponent, AccountService
+  TransactionListComponent, TransactionComponent
