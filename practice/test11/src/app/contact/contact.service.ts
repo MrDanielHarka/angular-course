@@ -1,4 +1,5 @@
 import { Contact } from './contact';
+import { ContactService } from './contact.service';
 import { Injectable, EventEmitter } from '@angular/core';
 
 

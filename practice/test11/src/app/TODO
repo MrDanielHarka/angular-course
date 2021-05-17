@@ -13,24 +13,28 @@ Contact
   Components
     ContactComponent, ContactListComponent, ContactPageComponent, ContactService
     GroupComponent, GroupListComponent, GroupPageComponent, GroupService
-Task maganer
+
+
+Task manager
   model
     Task
       brief: string
       description: string
       deadline: Date
       status: "TODO"|"IN-PROGRESS"|"DONE"; //icon
-      tasks: Taks[]
+      tasks: Task[]
       assignee: Person
     Person
       name: string
-      idon: string //(url) icon
+      icon: string //(url) icon
   UI: task tree
   Components
     TaskComponent,
       brief, status (icon), assignee (icon)
       ul/li/TaskComponent tasks => tree
     PersonComponent (popup, ha az assignee icon hover)
+
+
 Accounting
   model
     Account
