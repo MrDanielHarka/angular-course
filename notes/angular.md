@@ -41,7 +41,7 @@ Opening live update in browser:
 `1.` Creating a `contact` directory for the wanted component, in the `project/src/app` directory. _Contact_ is the example this time, hence the _contact_ naming.
 
 \
-`2.` Creating a `Contact.ts` file in `project/src/app/contact` for the class to be _exported_ and filling in the following:
+`2.` Creating a `contact.ts` file in `project/src/app/contact` for the class to be _exported_ and filling in the following:
 
 ```ts
 export class Contact {
@@ -54,7 +54,24 @@ export class Contact {
 > This is the class file.
 
 \
-`3.` Creating a `contact.component.css` file in `project/src/app/contact` and _css_ will be written here later on. This is just an example:
+
+`3.` Adding the following to `app.component.ts` inside `export class`:
+
+```ts
+mainContact: Contact;
+
+constructor() {
+  this.mainContact = new Contact();
+  this.mainContact.name = 'Daniel Harka';
+  this.mainContact.phone = '+36 30 555 XXXX';
+  this.mainContact.email = 'MrDanielHarka@gmail.com';
+}
+```
+
+> This way the app has access to mainContact and the constructor.
+
+\
+`4.` Creating a `contact.component.css` file in `project/src/app/contact` and _css_ will be written here later on. This is just an example:
 
 ```css
 * {
@@ -64,20 +81,6 @@ export class Contact {
 ```
 
 > This is the css file for the contact component.
-
-\
-`4.` Creating a `contact.component.html` file in `project/src/app/contact` and filling in:
-
-```html
-<div>
-  <div>Contact</div>
-  <div>{{contact.name}}</div>
-  <div>{{contact.phone}}</div>
-  <div>{{contact.email}}</div>
-</div>
-```
-
-> This is the html file for the contact component.
 
 \
 `5.` Creating a `contact.component.ts` file in `project/src/app/contact` and filling in:
@@ -102,7 +105,7 @@ export class ContactComponent {
 > Without this the different parts of the app are not able to "talk to" each other.
 
 \
-`7.` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
+`7` Adding the following to `app.module.ts` inside `@NgModule`'s `declarations`:
 
 ```ts
 ContactComponent;
@@ -113,20 +116,18 @@ ContactComponent;
 > Now the ContactComponent is accessible for the app module, if we connect with ctrl+space.
 
 \
-`8.` Adding the following to `app.component.ts` inside `export class`:
+`8.` Creating a `contact.component.html` file in `project/src/app/contact` and filling in:
 
-```ts
-mainContact: Contact;
-
-constructor() {
-  this.mainContact = new Contact();
-  this.mainContact.name = 'Daniel Harka';
-  this.mainContact.phone = '+36 30 555 XXXX';
-  this.mainContact.email = 'MrDanielHarka@gmail.com';
-}
+```html
+<div>
+  <div>Contact</div>
+  <div>{{contact.name}}</div>
+  <div>{{contact.phone}}</div>
+  <div>{{contact.email}}</div>
+</div>
 ```
 
-> This way the app has access to mainContact and the constructor.
+> This is the html file for the contact component.
 
 \
 `9.` Replacing the contents of `app.component.html` with the following:
@@ -141,7 +142,7 @@ constructor() {
 > Here mainContact is added as a name, which can be referred to by other parts of our application.
 
 \
-...and when all this is done, then you should have a simple, working app... or not.
+...and when all this is done, then we should have a simple, working app.
 
 \
 `10.` Editing `app.component.ts` and adding this below `mainContact`:

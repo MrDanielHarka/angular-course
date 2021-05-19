@@ -1,0 +1,16 @@
+a contact.ts ben létrehozott contact class lesz a contact objektumoknak a tervrajz, ez mást nem nagyon csinál, csak adatot tárol.
+
+a contact.component.ts ben hozzuk létre magának a komponensnek a ts részét. itt lehetne mindenfélét csinálni a contactban tárolt adatokkal, (szerintem) de ugye ebben a feladatban ( már nem tudom miért) ezt az egész logikát átvittük az app.component.ts fileba. 
+mégpedig úgy, hogy a contact.component.ts ben létrehozott contactComponent classban berakunk egy ilyen @input() valamit..alá pedig azt a mezőt írjuk, aminek az értékét szeretnénk máshonnan megkapni. ezzel adjuk át az app.component nek az értékadás lehetőségét. ez az input cucc csak a közvetlen alatta levő mezőre vonatkozik azt hiszem. és egyébként ez az egy mező egy contact típusú mező lesz. itt típusnak meg lehet adni classokat. szóval ezzel kifejezzük, hogy ebben a mezőben egy contact típusú objektum lesz tárolva: public contact : Contact
+ilyenkor nekem automatikusan csinálja, de jobb leellenőrizni, hogy fent a typescript importba a component mellé bekerült e az input is, illetve, hogy külön beimportálódott e a contact classunk
+
+app.component.ts ben is létrehozunk egy contact mezőt, itt is meg kell lennie a contact class importjának. attól még nem lett összekötve a contact.component meg az app componentben levő contact mezőnk, hogy itt is létrehoztunk egyet, a tényleges összekötés, az app.component.html ben van. 
+ott amikor létrehozzuk a contact componentünket, lehet attribútumként megadni az összeköttetést. [contact] = "contact" 
+a kapcsoszárójelbe kerül a contact componensben tárolt mező neve  ( tehát ahová importáljuk a mező értékét) és a macsekkörmök közé pedig az app.component mező értéke ( ahonnan jön az érték ) 
+
+az app.component.ts ben adjuk meg a contact mezőnek az értéket, ami egy objektum lesz. this.contact = new Contact(); ezután még értéket kell adni a contact objektum paramétereinek, azt lehet több  módon is. 
+
+de a lényeg, hogy az app.componentben adjuk meg a contact.componentben létező contact objektum adatait. 
+
+két dolog maradt még ki kb az egész contactos buliból, az egyik, hogy az app.modules.ts ben minden komponenst amit írsz, be kell jegyezni(fent import) ill a declarations részen a nevét.
+A másik, hogy a contact.component.html ben meg kell szerkeszteni a html megjelenését a komponensnek. egy mezőt tárol az egész komponens, a contactot. annak meg ugye mivel object . al tudod elérni a paramétereit : {{contact.name}} . hát nagyjából ennyi. sok benne a fölös szöveg amit amúgy is tudsz, de így állt össze a fejemben 😃
