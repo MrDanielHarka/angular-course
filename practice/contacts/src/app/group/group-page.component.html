@@ -1,0 +1,5 @@
+<app-group-list [groups]="groupService.groups"></app-group-list>
+<app-group
+*ngIf="!!groupService.selectedGroup"
+[group]="groupService.selectedGroup"
+></app-group>
