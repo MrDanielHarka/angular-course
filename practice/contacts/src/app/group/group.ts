@@ -1,4 +1,4 @@
-import { Contact } from "../contact/contact";
+import { Contact } from "./../contact/contact";
 
 export class Group {
     name: string;
