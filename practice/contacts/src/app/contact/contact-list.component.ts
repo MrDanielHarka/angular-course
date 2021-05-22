@@ -8,7 +8,7 @@ import { ContactService } from "./contact.service";
 })
 export class ContactListComponent {
 
-    @Input
+    @Input()
     contacts: Contact[];
 
     constructor(private contactService: ContactService) {
