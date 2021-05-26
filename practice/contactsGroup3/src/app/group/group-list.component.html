@@ -1,0 +1,9 @@
+<ul>
+  <li
+  *ngFor="let group of groups"
+  (click)="groupClicked(group)"
+  >
+    {{group.name}}
+    {{group.description}}
+  </li>
+</ul>

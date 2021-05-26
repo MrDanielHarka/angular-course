@@ -1,0 +1,7 @@
+<div *ngIf="!!group; else empty">
+  <div>{{group.name}}</div>
+  <div>{{group.description}}</div>
+</div>
+<ng-template #empty>
+  No group selected.
+</ng-template>

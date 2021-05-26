@@ -1,0 +1,8 @@
+<div *ngIf="!!contact; else empty">
+  <div>{{contact.name}}</div>
+  <div>{{contact.phone}}</div>
+  <div>{{contact.email}}</div>
+</div>
+<ng-template #empty>
+  No contact selected.
+</ng-template>

@@ -6,15 +6,14 @@ import { ContactService } from "./contact.service";
     selector: 'app-contact-list',
     templateUrl: './contact-list.component.html'
 })
-export class ContactListComponent {
-
+export class ContactListComponent{
     @Input()
     contacts!: Contact[];
 
-    constructor(public contactService: ContactService) { }
+    constructor(public contactService: ContactService){}
 
     contactClicked(contact: Contact) {
         this.contactService.setSelectedContact(contact)
     }
-}
 
+}
