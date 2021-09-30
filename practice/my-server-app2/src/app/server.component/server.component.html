@@ -1,0 +1,7 @@
+<h2>This is the server module</h2>
+<p>Server with ID {{ serverId }} is {{ getServerStatus() }}.</p>
+<p class="{{ messageColor }}">{{ serverCreationStatus }}</p>
+<button [disabled]="!allowNewServer" (click)="onCreateServer()">
+  Add Server
+</button>
+<p>Number of servers created: {{ serverSum }}</p>
