@@ -1,0 +1,37 @@
+body {
+  text-align: center;
+  color: #222;
+  margin: 10px auto;
+  max-width: 350px;
+  line-height: 1.6;
+  font-size: 17px;
+  padding: 0 10px;
+}
+
+h1,
+h2 {
+  color: purple;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.border {
+  border-style: dashed;
+  border-radius: 2px;
+  border-color: black;
+}
+
+button {
+  padding: 5px;
+  margin: 5px;
+}

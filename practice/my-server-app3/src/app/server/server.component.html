@@ -1,0 +1,12 @@
+<h2>Server module</h2>
+<div class="border">
+  <p>
+    Server is currently
+    <span class="{{ textColor }} bold">{{ serverStatus }}</span
+    >.
+  </p>
+
+  <button (click)="turnOn()" [disabled]="!onToggle">Turn on Server</button>
+  <button (click)="turnOff()" [disabled]="!offToggle">Turn off Server</button>
+  <br /><br />
+</div>

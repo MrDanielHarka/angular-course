@@ -1,0 +1,28 @@
+html {
+  background-color: gray;
+}
+
+body {
+  text-align: center;
+  margin: 10px auto;
+  max-width: 350px;
+  line-height: 1.6;
+  font-size: 17px;
+  padding: 0 10px;
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
