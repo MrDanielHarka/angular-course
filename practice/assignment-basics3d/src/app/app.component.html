@@ -1,0 +1,10 @@
+<h1>App Component</h1>
+<button (click)="onToggleDetails()">Toggle Details</button>
+<p *ngIf="showSecret">Secret password = Piggy</p>
+<div
+  *ngFor="let logItem of log"
+  [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-text': logItem >= 5 }"
+>
+  {{ logItem }}
+</div>

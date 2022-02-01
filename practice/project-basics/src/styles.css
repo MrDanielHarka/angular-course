@@ -1,0 +1,11 @@
+html {
+  max-width: 500px;
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+  margin: 10px auto;
+}
+
+.border {
+  border: 2px solid black;
+  padding: 7px;
+}

@@ -1,0 +1,35 @@
+<div *ngFor="let page of pages">
+  <hr />
+  <h2>
+    {{ page.title }}
+  </h2>
+  <b>Szó: </b> {{ page.wordcount | number: "1.0-0" }}
+  <div>
+    <b> Összefoglaló:</b>
+    <br />
+    <div [innerHTML]="page.snippet"></div>
+  </div>
+  <a
+    [href]="'https://en.wikipedia.org?curid=' + page.pageid"
+    target="_blank"
+    rel="noreferrer noopener nofollow"
+    >Teljes cikk</a
+  >
+</div>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Words</th>
+      <th>Snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let page of pages">
+      <td>{{ page.title }}</td>
+      <td>{{ page.wordcount }}</td>
+      <td>{{ page.snippet }}</td>
+    </tr>
+  </tbody>
+</table> -->

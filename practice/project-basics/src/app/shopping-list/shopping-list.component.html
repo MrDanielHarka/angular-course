@@ -1,0 +1,8 @@
+<app-shopping-edit></app-shopping-edit>
+<hr />
+<ul>
+  <a style="cursor: pointer" *ngFor="let ingredient of ingredients">
+    {{ ingredient.name }} ({{ ingredient.amount }})
+    <br />
+  </a>
+</ul>

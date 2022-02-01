@@ -1,0 +1,7 @@
+<h3>{{ element.name }}</h3>
+<p>
+  <strong *ngIf="element.type === 'server'" style="color: red">{{
+    element.content
+  }}</strong>
+  <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+</p>

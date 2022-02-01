@@ -1,0 +1,14 @@
+<h1>Server Component</h1>
+<label for="">Server Name</label>
+
+<br /><br />
+
+<input type="text" [(ngModel)]="serverName" />
+
+<br /><br />
+
+<button [disabled]="allowNewServer" (click)="onCreateServer()">
+  Add Server
+</button>
+
+<div *ngFor="let server of servers"></div>

@@ -1,0 +1,18 @@
+<br /><br />
+
+<button>New Recipe</button>
+<br /><br />
+<div>
+  <div class="border">
+    <a href="#" *ngFor="let recipe of recipes">
+      <p>{{ recipe.name }}</p>
+      <p>{{ recipe.description }}</p>
+      <img
+        [src]="recipe.imagePath"
+        alt="{{ recipe.name }}"
+        style="max-height: 100px"
+      />
+    </a>
+  </div>
+  <app-recipe-item></app-recipe-item>
+</div>

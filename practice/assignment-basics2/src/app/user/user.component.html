@@ -1,0 +1,10 @@
+<h1>The user component</h1>
+<label>Username</label>
+<input type="text" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<!-- <button [disabled]="username === ''" (click)="clearUsername()">
+  Reset Username
+</button> -->
+<button [disabled]="username === ''" (click)="username = ''">
+  Reset Username
+</button>

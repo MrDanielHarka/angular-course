@@ -1,0 +1,18 @@
+<h1>Server Component</h1>
+
+<input type="text" [(ngModel)]="serverName" />
+
+<!-- <p>{{ serverName }}</p> -->
+
+<br /><br />
+
+<button [disabled]="!allowNewServer" (click)="onCreateServer()">
+  AddServer
+</button>
+<p *ngIf="serverCreated; else noServer">
+  Server was created! Server name is {{ serverName }}
+</p>
+<ng-template #noServer>
+  <p>No server was created.</p>
+</ng-template>
+<!-- <p>{{ serverCreationStatus }}</p> -->

@@ -1,0 +1,17 @@
+<header>
+  <h1>Wikipédia Kereső</h1>
+  <p>
+    Egy mini applikáció, amivel a Wikipédia <b>angol</b> nyelvű adatbázisában
+    tudunk keresni.
+  </p>
+</header>
+
+<main>
+  <app-search-bar (submitted)="onTerm($event)"></app-search-bar>
+
+  <app-page-list [pages]="pages"></app-page-list>
+</main>
+
+<footer>
+  <app-source></app-source>
+</footer>
