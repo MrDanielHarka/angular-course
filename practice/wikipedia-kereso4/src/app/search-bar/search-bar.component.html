@@ -1,0 +1,26 @@
+<!-- <form (submit)="onFormSubmit($event)">
+  <input (input)="onInput($any($event.target).value)" />
+
+  <input
+    (input)="term = $any($event.target).value; onInput($event)"
+    placeholder="cikk témája"
+    autofocus
+  />
+</form> -->
+<br />
+
+<div class="centered">
+  <input
+    (input)="onInput($any($event.target).value)"
+    placeholder="szócikk témája"
+    autofocus
+  />
+</div>
+
+<div *ngIf="showWhitespace">
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+</div>

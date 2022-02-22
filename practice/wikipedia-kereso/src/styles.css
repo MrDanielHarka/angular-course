@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "simpledotcss/simple.min.css";
+
+a,
+a:visited {
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.searchmatch {
+  font-style: italic;
+  font-weight: bold;
+}
